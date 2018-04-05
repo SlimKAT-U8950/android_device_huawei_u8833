@@ -29,6 +29,9 @@ TARGET_OTA_ASSERT_DEVICE := u8833,hwu8833,u8951,hwu8951
 # Audio
 TARGET_PROVIDES_LIBAUDIO := true
 
+# Radio
+BOARD_PROVIDES_LIBRIL := true
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/u8833/bluetooth
 
@@ -38,6 +41,8 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
 
 # Kernel
 TARGET_KERNEL_CONFIG := u8833_defconfig
+
+
 
 # These currently have to go to the ramdisk for wlan_detect to pick them up.
 # Hopefully they can join their friends at $(KERNEL_MODULES_OUT) soon. :(
@@ -59,9 +64,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1207943168 # 0x47FFC000
 # Recovery
 BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8833/recovery/graphics.c
 TARGET_RECOVERY_FSTAB := device/huawei/u8833/rootdir/fstab.huawei
-
-# RIL
-BOARD_RIL_CLASS := ../../../device/huawei/u8833/ril/
 
 # Wi-Fi
 BOARD_HAS_ATH_WLAN := true
